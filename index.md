@@ -1,4 +1,4 @@
-# Mahikavati Rajya Campaign Guide
+
 
 Welcome to the island kingdom campaign setting!
 
