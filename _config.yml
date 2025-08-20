@@ -1,0 +1,22 @@
+title: Mahikavati Rajya Campaign Guide
+description: A D&D 5e Island Kingdom Campaign Setting
+theme: minima
+
+# Optional additional settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Navigation (if you want a header menu)
+header_pages:
+  - section-01-welcome.md
+  - section-02-geography.md
+  - section-03-character-creation.md
+  - section-04-administration.md
+  - section-05-guilds.md
+
+# Repository info (optional)
+github_username: yourusername
+repository: repository-name
