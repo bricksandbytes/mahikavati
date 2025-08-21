@@ -9,6 +9,7 @@ Welcome to the island kingdom campaign setting!
 - [Section 3: Character Creation Guide](section-3-character-creation.md)
 - [Section 4: Royal Administration](section-4-administration.md)
 - [Section 5: Trade Guilds & Organizations](section-5-guilds.md)
+- [Section 6: The Art of Acquisition](section-6-primer.md)
 
 <!-- 
 ## Individual Subah Profiles
@@ -22,4 +23,5 @@ Welcome to the island kingdom campaign setting!
 - [Sanjay Vanam Forest](forest-reserve.md)
 -->
 
-https://www.dndbeyond.com/campaigns/join/69329203398667669
+**Invitation:** [https://www.dndbeyond.com/campaigns/join/69329203398667669](https://www.dndbeyond.com/campaigns/join/69329203398667669)
+
