@@ -1,3 +1,4 @@
+
 # Mahikavati Rajya Campaign Guide
 
 Welcome to the island kingdom campaign setting!
@@ -9,6 +10,7 @@ Welcome to the island kingdom campaign setting!
 - [Section 4: Royal Administration](section-4-administration.md)
 - [Section 5: Trade Guilds & Organizations](section-5-guilds.md)
 
+<!-- 
 ## Individual Subah Profiles
 - [Maha-Amba](subah-maha-amba.md)
 - [Andheri](subah-andheri.md)
@@ -18,3 +20,6 @@ Welcome to the island kingdom campaign setting!
 - [Mira](subah-mira.md)
 - [Thane](subah-thane.md)
 - [Sanjay Vanam Forest](forest-reserve.md)
+-->
+
+https://www.dndbeyond.com/campaigns/join/69329203398667669
