@@ -11,6 +11,10 @@ Welcome to the island kingdom campaign setting!
 - [Section 5: Trade Guilds & Organizations](section-5-guilds.md)
 - [Section 6: The Art of Acquisition](section-6-primer.md)
 
+
+## Locations
+- [Madh Pargana - Andheri Subah](pargana_madh.md)
+
 <!-- 
 ## Individual Subah Profiles
 - [Maha-Amba](subah-maha-amba.md)
