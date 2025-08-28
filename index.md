@@ -14,6 +14,7 @@ Welcome to the island kingdom campaign setting!
 
 ## Locations
 - [Madh Pargana - Andheri Subah](pargana_madh.md)
+  - [Map](madh.bmp)
 
 <!-- 
 ## Individual Subah Profiles
