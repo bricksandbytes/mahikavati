@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 1: Hall of Synchronized Stepping</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+        svg {
+            border: 3px solid #d4af37;
+            border-radius: 8px;
+            background: #2a2a2a;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>🗝️ Hall of Synchronized Stepping 🗝️</h1>
+
+    <svg width="850" height="550" viewBox="0 0 850 550" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="stonePattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect width="20" height="20" fill="#4a4a4a"/>
+                <rect x="0" y="0" width="10" height="10" fill="#555555" opacity="0.5"/>
+                <rect x="10" y="10" width="10" height="10" fill="#555555" opacity="0.5"/>
+            </pattern>
+            
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+            
+            <filter id="plateShadow">
+                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.5"/>
+            </filter>
+        </defs>
+
+        <rect x="50" y="50" width="750" height="450" fill="url(#stonePattern)" stroke="#2a2a2a" stroke-width="4"/>
+        <rect x="70" y="70" width="710" height="410" fill="#3a3a3a" stroke="#555" stroke-width="2"/>
+
+        <rect x="350" y="480" width="150" height="20" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <rect x="370" y="485" width="110" height="10" fill="#8b6914" opacity="0.6"/>
+        <text x="425" y="495" font-size="12" fill="#d4af37" text-anchor="middle" font-weight="bold">ENTRY</text>
+
+        <rect x="350" y="50" width="150" height="20" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <rect x="370" y="55" width="110" height="10" fill="#1a5fb4" opacity="0.8"/>
+        <text x="425" y="65" font-size="12" fill="#62a0ea" text-anchor="middle" font-weight="bold">SEALED EXIT</text>
+        
+        <circle cx="425" cy="60" r="25" fill="none" stroke="#62a0ea" stroke-width="2" opacity="0.6" filter="url(#glow)">
+            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
+        </circle>
+
+        <text x="425" y="35" font-size="11" fill="#d4af37" text-anchor="middle" font-style="italic" font-weight="bold">
+            "United in purpose, divided in step,"
+        </text>
+        <text x="425" y="47" font-size="11" fill="#d4af37" text-anchor="middle" font-style="italic" font-weight="bold">
+            "harmony opens what chaos has kept"
+        </text>
+
+        <!-- Pressure Plates Grid -->
+        <rect x="150" y="120" width="80" height="60" rx="5" fill="#3584e4" stroke="#1c71d8" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="190" y="155" font-size="16" fill="white" text-anchor="middle" font-weight="bold">BLUE</text>
+        
+        <rect x="270" y="120" width="80" height="60" rx="5" fill="#e01b24" stroke="#c01c28" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="310" y="155" font-size="16" fill="white" text-anchor="middle" font-weight="bold">RED</text>
+        
+        <rect x="500" y="120" width="80" height="60" rx="5" fill="#33d17a" stroke="#26a269" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="540" y="155" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GREEN</text>
+        
+        <rect x="620" y="120" width="80" height="60" rx="5" fill="#f6d32d" stroke="#f5c211" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="660" y="155" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GOLD</text>
+
+        <rect x="150" y="200" width="80" height="60" rx="5" fill="#33d17a" stroke="#26a269" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="190" y="235" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GREEN</text>
+        
+        <rect x="270" y="200" width="80" height="60" rx="5" fill="#f6d32d" stroke="#f5c211" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="310" y="235" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GOLD</text>
+        
+        <rect x="500" y="200" width="80" height="60" rx="5" fill="#3584e4" stroke="#1c71d8" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="540" y="235" font-size="16" fill="white" text-anchor="middle" font-weight="bold">BLUE</text>
+        
+        <rect x="620" y="200" width="80" height="60" rx="5" fill="#e01b24" stroke="#c01c28" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="660" y="235" font-size="16" fill="white" text-anchor="middle" font-weight="bold">RED</text>
+
+        <rect x="150" y="280" width="80" height="60" rx="5" fill="#e01b24" stroke="#c01c28" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="190" y="315" font-size="16" fill="white" text-anchor="middle" font-weight="bold">RED</text>
+        
+        <rect x="270" y="280" width="80" height="60" rx="5" fill="#3584e4" stroke="#1c71d8" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="310" y="315" font-size="16" fill="white" text-anchor="middle" font-weight="bold">BLUE</text>
+        
+        <rect x="500" y="280" width="80" height="60" rx="5" fill="#f6d32d" stroke="#f5c211" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="540" y="315" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GOLD</text>
+        
+        <rect x="620" y="280" width="80" height="60" rx="5" fill="#33d17a" stroke="#26a269" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="660" y="315" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GREEN</text>
+
+        <rect x="150" y="360" width="80" height="60" rx="5" fill="#f6d32d" stroke="#f5c211" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="190" y="395" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GOLD</text>
+        
+        <rect x="270" y="360" width="80" height="60" rx="5" fill="#33d17a" stroke="#26a269" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="310" y="395" font-size="16" fill="white" text-anchor="middle" font-weight="bold">GREEN</text>
+        
+        <rect x="500" y="360" width="80" height="60" rx="5" fill="#e01b24" stroke="#c01c28" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="540" y="395" font-size="16" fill="white" text-anchor="middle" font-weight="bold">RED</text>
+        
+        <rect x="620" y="360" width="80" height="60" rx="5" fill="#3584e4" stroke="#1c71d8" stroke-width="3" filter="url(#plateShadow)"/>
+        <text x="660" y="395" font-size="16" fill="white" text-anchor="middle" font-weight="bold">BLUE</text>
+
+        <g opacity="0.7">
+            <rect x="75" y="140" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="75" y="180" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="75" y="220" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="75" y="260" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="75" y="300" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="75" y="340" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="75" y="380" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="75" y="420" width="15" height="3" fill="#2a2a2a"/>
+            
+            <rect x="760" y="140" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="760" y="180" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="760" y="220" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="760" y="260" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="760" y="300" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="760" y="340" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="760" y="380" width="15" height="3" fill="#2a2a2a"/>
+            <rect x="760" y="420" width="15" height="3" fill="#2a2a2a"/>
+        </g>
+
+        <rect x="720" y="75" width="50" height="40" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <circle cx="745" cy="95" r="8" fill="#f6d32d" stroke="#f5c211" stroke-width="1.5"/>
+        <text x="745" y="99" font-size="10" fill="#654321" text-anchor="middle" font-weight="bold">💎</text>
+
+        <text x="425" y="480" font-size="10" fill="#8b7355" text-anchor="middle" font-style="italic">
+            [Ancient murals depict figures moving in coordinated patterns]
+        </text>
+
+        <g>
+            <line x1="100" y1="530" x2="200" y2="530" stroke="#d4af37" stroke-width="2"/>
+            <line x1="100" y1="525" x2="100" y2="535" stroke="#d4af37" stroke-width="2"/>
+            <line x1="200" y1="525" x2="200" y2="535" stroke="#d4af37" stroke-width="2"/>
+            <text x="150" y="522" font-size="12" fill="#d4af37" text-anchor="middle" font-weight="bold">10 feet</text>
+        </g>
+    </svg>
+
+</body>
+</html>
