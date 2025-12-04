@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 3: The Tethered Gauntlet</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+        svg {
+            border: 3px solid #d4af37;
+            border-radius: 8px;
+            background: #2a2a2a;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>⚗️ The Tethered Gauntlet ⚗️</h1>
+
+    <svg width="950" height="650" viewBox="0 0 950 650" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="acidGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#57e389;stop-opacity:0.9" />
+                <stop offset="50%" style="stop-color:#33d17a;stop-opacity:0.95" />
+                <stop offset="100%" style="stop-color:#26a269;stop-opacity:1" />
+            </linearGradient>
+
+            <radialGradient id="bubble1">
+                <stop offset="0%" style="stop-color:#8ff0a4;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#33d17a;stop-opacity:0" />
+            </radialGradient>
+
+            <pattern id="stoneWall" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+                <rect width="30" height="30" fill="#4a4a4a"/>
+                <rect x="0" y="0" width="15" height="15" fill="#555555" opacity="0.5"/>
+                <rect x="15" y="15" width="15" height="15" fill="#555555" opacity="0.5"/>
+            </pattern>
+
+            <linearGradient id="platformGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#6a6a6a;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#4a4a4a;stop-opacity:1" />
+            </linearGradient>
+
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="strongGlow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="shadow">
+                <feDropShadow dx="3" dy="5" stdDeviation="4" flood-opacity="0.6"/>
+            </filter>
+        </defs>
+
+        <rect x="30" y="30" width="890" height="590" fill="url(#stoneWall)" stroke="#2a2a2a" stroke-width="4"/>
+        
+        <rect x="50" y="50" width="350" height="550" fill="#3a3a3a" stroke="#555" stroke-width="2"/>
+        
+        <rect x="550" y="50" width="350" height="550" fill="#3a3a3a" stroke="#555" stroke-width="2"/>
+
+        <rect x="400" y="50" width="150" height="550" fill="url(#acidGradient)" stroke="#26a269" stroke-width="3"/>
+        
+        <g id="acidEffects">
+            <circle cx="430" cy="150" r="15" fill="url(#bubble1)" opacity="0.6">
+                <animate attributeName="r" values="10;20;10" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="490" cy="250" r="12" fill="url(#bubble1)" opacity="0.6">
+                <animate attributeName="r" values="8;18;8" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <circle cx="450" cy="380" r="18" fill="url(#bubble1)" opacity="0.6">
+                <animate attributeName="r" values="12;22;12" dur="3.2s" repeatCount="indefinite" begin="1s"/>
+                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.2s" repeatCount="indefinite" begin="1s"/>
+            </circle>
+            <circle cx="510" cy="480" r="14" fill="url(#bubble1)" opacity="0.6">
+                <animate attributeName="r" values="9;19;9" dur="2.8s" repeatCount="indefinite" begin="1.5s"/>
+                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.8s" repeatCount="indefinite" begin="1.5s"/>
+            </circle>
+            
+            <path d="M 410 100 Q 475 120 420 180" stroke="#8ff0a4" stroke-width="2" fill="none" opacity="0.4">
+                <animate attributeName="d" 
+                    values="M 410 100 Q 475 120 420 180;M 415 100 Q 470 125 425 180;M 410 100 Q 475 120 420 180" 
+                    dur="4s" repeatCount="indefinite"/>
+            </path>
+            <path d="M 530 300 Q 460 320 520 380" stroke="#8ff0a4" stroke-width="2" fill="none" opacity="0.4">
+                <animate attributeName="d" 
+                    values="M 530 300 Q 460 320 520 380;M 525 300 Q 465 325 515 380;M 530 300 Q 460 320 520 380" 
+                    dur="3.5s" repeatCount="indefinite"/>
+            </path>
+        </g>
+
+        <g id="jelly1" opacity="0.8">
+            <ellipse cx="440" cy="200" rx="30" ry="25" fill="#f9c74f" stroke="#f8961e" stroke-width="2" filter="url(#glow)">
+                <animate attributeName="rx" values="30;35;30" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="ry" values="25;22;25" dur="2s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="435" cy="195" rx="8" ry="10" fill="#f8961e" opacity="0.6"/>
+            <ellipse cx="445" cy="198" rx="6" ry="8" fill="#f8961e" opacity="0.6"/>
+        </g>
+
+        <g id="jelly2" opacity="0.8">
+            <ellipse cx="500" cy="420" rx="28" ry="23" fill="#f9c74f" stroke="#f8961e" stroke-width="2" filter="url(#glow)">
+                <animate attributeName="rx" values="28;33;28" dur="2.3s" repeatCount="indefinite" begin="0.5s"/>
+                <animate attributeName="ry" values="23;20;23" dur="2.3s" repeatCount="indefinite" begin="0.5s"/>
+            </ellipse>
+            <ellipse cx="495" cy="415" rx="7" ry="9" fill="#f8961e" opacity="0.6"/>
+            <ellipse cx="505" cy="418" rx="6" ry="8" fill="#f8961e" opacity="0.6"/>
+        </g>
+
+        <g id="platform1">
+            <ellipse cx="650" cy="515" rx="60" ry="25" fill="#000" opacity="0.3"/>
+            <rect x="590" y="480" width="120" height="30" fill="url(#platformGradient)" stroke="#3a3a3a" stroke-width="2" filter="url(#shadow)"/>
+            <ellipse cx="650" cy="480" rx="60" ry="20" fill="#7a7a7a" stroke="#5a5a5a" stroke-width="2"/>
+            <line x1="570" y1="510" x2="570" y2="480" stroke="#d4af37" stroke-width="2" stroke-dasharray="3,3"/>
+            <text x="560" y="500" font-size="11" fill="#d4af37" text-anchor="end" font-weight="bold">10 ft</text>
+            <rect x="645" y="460" width="10" height="20" rx="2" fill="#8b7355" stroke="#654321" stroke-width="2"/>
+            <circle cx="650" cy="458" r="6" fill="#c0c0c0" stroke="#666" stroke-width="2"/>
+        </g>
+
+        <g id="platform2">
+            <ellipse cx="650" cy="335" rx="60" ry="25" fill="#000" opacity="0.3"/>
+            <rect x="590" y="300" width="120" height="30" fill="url(#platformGradient)" stroke="#3a3a3a" stroke-width="2" filter="url(#shadow)"/>
+            <ellipse cx="650" cy="300" rx="60" ry="20" fill="#7a7a7a" stroke="#5a5a5a" stroke-width="2"/>
+            <line x1="570" y1="330" x2="570" y2="300" stroke="#d4af37" stroke-width="2" stroke-dasharray="3,3"/>
+            <text x="560" y="320" font-size="11" fill="#d4af37" text-anchor="end" font-weight="bold">15 ft</text>
+            <rect x="645" y="280" width="10" height="20" rx="2" fill="#8b7355" stroke="#654321" stroke-width="2"/>
+            <circle cx="650" cy="278" r="6" fill="#c0c0c0" stroke="#666" stroke-width="2"/>
+        </g>
+
+        <g id="platform3">
+            <ellipse cx="650" cy="155" rx="60" ry="25" fill="#000" opacity="0.3"/>
+            <rect x="590" y="120" width="120" height="30" fill="url(#platformGradient)" stroke="#3a3a3a" stroke-width="2" filter="url(#shadow)"/>
+            <ellipse cx="650" cy="120" rx="60" ry="20" fill="#7a7a7a" stroke="#5a5a5a" stroke-width="2"/>
+            <line x1="570" y1="150" x2="570" y2="120" stroke="#d4af37" stroke-width="2" stroke-dasharray="3,3"/>
+            <text x="560" y="140" font-size="11" fill="#d4af37" text-anchor="end" font-weight="bold">20 ft</text>
+            <rect x="645" y="100" width="10" height="20" rx="2" fill="#8b7355" stroke="#654321" stroke-width="2"/>
+            <circle cx="650" cy="98" r="6" fill="#c0c0c0" stroke="#666" stroke-width="2"/>
+        </g>
+
+        <g id="keyPedestal">
+            <rect x="800" y="280" width="50" height="80" fill="#555" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <polygon points="825,275 805,280 845,280" fill="#666"/>
+            <path d="M 810 300 L 815 290 L 820 295 L 825 285 L 830 295 L 835 290 L 840 300" 
+                  fill="none" stroke="#3584e4" stroke-width="2" opacity="0.6"/>
+            <g transform="translate(825, 310)">
+                <polygon points="0,-15 -5,-5 -3,0 -5,10 0,15 5,10 3,0 5,-5" 
+                         fill="#62a0ea" stroke="#1c71d8" stroke-width="2" filter="url(#glow)" opacity="0.9">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+                </polygon>
+            </g>
+        </g>
+
+        <rect x="30" y="275" width="20" height="100" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <text x="40" y="325" font-size="11" fill="#d4af37" text-anchor="middle" font-weight="bold" transform="rotate(-90, 40, 325)">ENTRANCE</text>
+
+        <rect x="900" y="275" width="20" height="100" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <rect x="905" y="285" width="10" height="80" fill="#8b6914" opacity="0.6"/>
+        
+        <g id="magicalBarrier">
+            <circle cx="910" cy="325" r="35" fill="none" stroke="#62a0ea" stroke-width="3" opacity="0.7" filter="url(#strongGlow)">
+                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="910" cy="325" r="25" fill="none" stroke="#62a0ea" stroke-width="2" opacity="0.5">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <line x1="895" y1="310" x2="925" y2="340" stroke="#62a0ea" stroke-width="2" opacity="0.6"/>
+            <line x1="925" y1="310" x2="895" y2="340" stroke="#62a0ea" stroke-width="2" opacity="0.6"/>
+        </g>
+        <text x="910" y="260" font-size="10" fill="#62a0ea" text-anchor="middle" font-weight="bold" transform="rotate(90, 910, 260)">SEALED</text>
+
+        <g>
+            <line x1="400" y1="620" x2="550" y2="620" stroke="#33d17a" stroke-width="2"/>
+            <line x1="400" y1="615" x2="400" y2="625" stroke="#33d17a" stroke-width="2"/>
+            <line x1="550" y1="615" x2="550" y2="625" stroke="#33d17a" stroke-width="2"/>
+            <text x="475" y="612" font-size="12" fill="#33d17a" text-anchor="middle" font-weight="bold">15 feet wide</text>
+        </g>
+
+        <g>
+            <line x1="80" y1="615" x2="180" y2="615" stroke="#d4af37" stroke-width="2"/>
+            <line x1="80" y1="610" x2="80" y2="620" stroke="#d4af37" stroke-width="2"/>
+            <line x1="180" y1="610" x2="180" y2="620" stroke="#d4af37" stroke-width="2"/>
+            <text x="130" y="607" font-size="12" fill="#d4af37" text-anchor="middle" font-weight="bold">10 feet</text>
+        </g>
+    </svg>
+
+</body>
+</html>
