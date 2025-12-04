@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 4: The Travieze Lock</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        svg {
+            border: 3px solid #d4af37;
+            border-radius: 8px;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0a 100%);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>🔐 The Travieze Lock 🔐</h1>
+
+    <svg width="800" height="900" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- Starfield pattern for dome -->
+            <radialGradient id="domeGradient" cx="50%" cy="50%">
+                <stop offset="0%" style="stop-color:#1a1a3e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0a0a1e;stop-opacity:1" />
+            </radialGradient>
+
+            <!-- Floor pattern -->
+            <radialGradient id="floorGradient" cx="50%" cy="50%">
+                <stop offset="0%" style="stop-color:#3a3a3a;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+            </radialGradient>
+
+            <!-- Magical glow effects -->
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="strongGlow">
+                <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="superGlow">
+                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <!-- Shadow -->
+            <filter id="shadow">
+                <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.8"/>
+            </filter>
+
+            <!-- Metallic gradient for Lock -->
+            <linearGradient id="adamantineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#c0c0c0;stop-opacity:1" />
+                <stop offset="25%" style="stop-color:#e8e8e8;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#a0a0a0;stop-opacity:1" />
+                <stop offset="75%" style="stop-color:#d0d0d0;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#b0b0b0;stop-opacity:1" />
+            </linearGradient>
+
+            <!-- Rune glow colors -->
+            <linearGradient id="runeGradient1">
+                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ee5a6f;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="runeGradient2">
+                <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#45b7af;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="runeGradient3">
+                <stop offset="0%" style="stop-color:#ffe66d;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ffd93d;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="runeGradient4">
+                <stop offset="0%" style="stop-color:#a8dadc;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#95c9cc;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+
+        <!-- Circular chamber floor -->
+        <circle cx="400" cy="500" r="350" fill="url(#floorGradient)" stroke="#2a2a2a" stroke-width="4"/>
+
+        <!-- Floor circle patterns (mystical) -->
+        <circle cx="400" cy="500" r="300" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3"/>
+        <circle cx="400" cy="500" r="250" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3"/>
+        <circle cx="400" cy="500" r="200" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3"/>
+        <circle cx="400" cy="500" r="150" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3"/>
+        
+        <!-- Inner sacred circle -->
+        <circle cx="400" cy="500" r="120" fill="none" stroke="#d4af37" stroke-width="3" opacity="0.5" filter="url(#glow)">
+            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Mystical runes in floor -->
+        <g opacity="0.4">
+            <text x="400" y="380" font-size="24" fill="#d4af37" text-anchor="middle" font-family="serif">◈</text>
+            <text x="400" y="620" font-size="24" fill="#d4af37" text-anchor="middle" font-family="serif">◈</text>
+            <text x="280" y="500" font-size="24" fill="#d4af37" text-anchor="middle" font-family="serif">◈</text>
+            <text x="520" y="500" font-size="24" fill="#d4af37" text-anchor="middle" font-family="serif">◈</text>
+        </g>
+
+        <!-- Dome ceiling with star map -->
+        <ellipse cx="400" cy="150" rx="350" ry="150" fill="url(#domeGradient)" stroke="#1a1a3e" stroke-width="3"/>
+        
+        <!-- Stars in dome -->
+        <g id="stars" opacity="0.8">
+            <circle cx="250" cy="80" r="2" fill="white">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="320" cy="100" r="1.5" fill="white">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <circle cx="450" cy="90" r="2" fill="white">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite" begin="1s"/>
+            </circle>
+            <circle cx="520" cy="110" r="1.5" fill="white">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="2.8s" repeatCount="indefinite" begin="0.3s"/>
+            </circle>
+            <circle cx="380" cy="130" r="2.5" fill="white">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" repeatCount="indefinite" begin="1.2s"/>
+            </circle>
+            <circle cx="580" cy="95" r="1.5" fill="white">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="2.7s" repeatCount="indefinite" begin="0.8s"/>
+            </circle>
+            <circle cx="200" cy="120" r="2" fill="white">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="3.3s" repeatCount="indefinite" begin="1.5s"/>
+            </circle>
+        </g>
+
+        <!-- Four statues around perimeter -->
+        <!-- Statue 1 (North) -->
+        <g id="statue1">
+            <ellipse cx="400" cy="225" rx="20" ry="8" fill="#000" opacity="0.4"/>
+            <rect x="385" y="180" width="30" height="40" fill="#555" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="400" cy="175" r="12" fill="#666" stroke="#444" stroke-width="2"/>
+            <path d="M 390 180 L 400 200 L 410 180" fill="#444" stroke="#333" stroke-width="1"/>
+            <line x1="400" y1="200" x2="400" y2="500" stroke="#d4af37" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+        </g>
+
+        <!-- Statue 2 (East) -->
+        <g id="statue2">
+            <ellipse cx="625" cy="500" rx="20" ry="8" fill="#000" opacity="0.4"/>
+            <rect x="610" y="455" width="30" height="40" fill="#555" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="625" cy="450" r="12" fill="#666" stroke="#444" stroke-width="2"/>
+            <path d="M 615 455 L 625 475 L 635 455" fill="#444" stroke="#333" stroke-width="1"/>
+            <line x1="625" y1="475" x2="400" y2="500" stroke="#d4af37" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+        </g>
+
+        <!-- Statue 3 (South) -->
+        <g id="statue3">
+            <ellipse cx="400" cy="775" rx="20" ry="8" fill="#000" opacity="0.4"/>
+            <rect x="385" y="730" width="30" height="40" fill="#555" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="400" cy="725" r="12" fill="#666" stroke="#444" stroke-width="2"/>
+            <path d="M 390 730 L 400 750 L 410 730" fill="#444" stroke="#333" stroke-width="1"/>
+            <line x1="400" y1="750" x2="400" y2="500" stroke="#d4af37" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+        </g>
+
+        <!-- Statue 4 (West) -->
+        <g id="statue4">
+            <ellipse cx="175" cy="500" rx="20" ry="8" fill="#000" opacity="0.4"/>
+            <rect x="160" y="455" width="30" height="40" fill="#555" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="175" cy="450" r="12" fill="#666" stroke="#444" stroke-width="2"/>
+            <path d="M 165 455 L 175 475 L 185 455" fill="#444" stroke="#333" stroke-width="1"/>
+            <line x1="175" y1="475" x2="400" y2="500" stroke="#d4af37" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+        </g>
+
+        <!-- THE TRAVIEZE LOCK - floating in center -->
+        <g id="travieze-lock">
+            <!-- Shadow below -->
+            <ellipse cx="400" cy="520" rx="50" ry="15" fill="#000" opacity="0.5">
+                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+            </ellipse>
+
+            <!-- Levitation glow -->
+            <circle cx="400" cy="460" r="70" fill="#62a0ea" opacity="0.1" filter="url(#superGlow)">
+                <animate attributeName="r" values="65;75;65" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.05;0.15;0.05" dur="3s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- The Lock itself - rotating cube with interwoven bands -->
+            <g transform="translate(400, 460)">
+                <!-- Main cube structure -->
+                <rect x="-40" y="-40" width="80" height="80" fill="url(#adamantineGradient)" 
+                      stroke="#888" stroke-width="3" filter="url(#strongGlow)" opacity="0.9">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                      from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+                </rect>
+
+                <!-- Interwoven bands (horizontal) -->
+                <rect x="-45" y="-10" width="90" height="20" fill="#a0a0a0" stroke="#707070" stroke-width="2" opacity="0.8">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                      from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+                </rect>
+
+                <!-- Interwoven bands (vertical) -->
+                <rect x="-10" y="-45" width="20" height="90" fill="#b0b0b0" stroke="#808080" stroke-width="2" opacity="0.8">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                      from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+                </rect>
+
+                <!-- Diagonal band -->
+                <rect x="-5" y="-50" width="10" height="100" fill="#c0c0c0" stroke="#909090" stroke-width="2" opacity="0.7"
+                      transform="rotate(45)">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                      from="45 0 0" to="405 0 0" dur="20s" repeatCount="indefinite"/>
+                </rect>
+
+                <!-- Runes in four colors (representing four languages) -->
+                <g id="runes">
+                    <!-- Draconic (red) -->
+                    <text x="-25" y="-30" font-size="12" fill="url(#runeGradient1)" font-family="serif" 
+                          filter="url(#glow)" font-weight="bold">ᛞ</text>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+                    
+                    <!-- Elvish (cyan) -->
+                    <text x="15" y="-30" font-size="12" fill="url(#runeGradient2)" font-family="serif" 
+                          filter="url(#glow)" font-weight="bold">ᛖ</text>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.3s" repeatCount="indefinite"/>
+                    
+                    <!-- Celestial (yellow) -->
+                    <text x="-25" y="10" font-size="12" fill="url(#runeGradient3)" font-family="serif" 
+                          filter="url(#glow)" font-weight="bold">ᛣ</text>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.6s" repeatCount="indefinite"/>
+                    
+                    <!-- Infernal (blue) -->
+                    <text x="15" y="10" font-size="12" fill="url(#runeGradient4)" font-family="serif" 
+                          filter="url(#glow)" font-weight="bold">ᛏ</text>
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.9s" repeatCount="indefinite"/>
+                </g>
+
+                <!-- Crystal key insertion point (glowing slot) -->
+                <rect x="-8" y="35" width="16" height="8" fill="#62a0ea" stroke="#1c71d8" 
+                      stroke-width="2" rx="2" filter="url(#glow)" opacity="0.7">
+                    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="1.5s" repeatCount="indefinite"/>
+                </rect>
+            </g>
+
+            <!-- Floating text label -->
+            <text x="400" y="550" font-size="14" fill="#d4af37" text-anchor="middle" 
+                  font-weight="bold" filter="url(#glow)">THE TRAVIEZE LOCK</text>
+        </g>
+
+        <!-- Telepathic message visualization -->
+        <g id="telepathic-aura" opacity="0.3">
+            <circle cx="400" cy="460" r="100" fill="none" stroke="#62a0ea" stroke-width="2" filter="url(#glow)">
+                <animate attributeName="r" values="100;140;100" dur="4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="400" cy="460" r="120" fill="none" stroke="#62a0ea" stroke-width="1" filter="url(#glow)">
+                <animate attributeName="r" values="120;160;120" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+                <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+        </g>
+
+        <!-- Entrance from Room 3 -->
+        <path d="M 380 850 L 420 850 L 420 870 L 380 870 Z" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <text x="400" y="863" font-size="11" fill="#d4af37" text-anchor="middle" font-weight="bold">ENTRANCE</text>
+
+        <!-- Scale indicator -->
+        <g>
+            <line x1="100" y1="870" x2="200" y2="870" stroke="#d4af37" stroke-width="2"/>
+            <line x1="100" y1="865" x2="100" y2="875" stroke="#d4af37" stroke-width="2"/>
+            <line x1="200" y1="865" x2="200" y2="875" stroke="#d4af37" stroke-width="2"/>
+            <text x="150" y="862" font-size="12" fill="#d4af37" text-anchor="middle" font-weight="bold">10 feet</text>
+        </g>
+
+        <!-- Dimension indicator -->
+        <text x="400" y="30" font-size="13" fill="#d4af37" text-anchor="middle" font-weight="bold">
+            40 ft Diameter Circular Chamber
+        </text>
+    </svg>
+
+</body>
+</html>
