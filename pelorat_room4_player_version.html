@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 4: Observatory of Converging Fates</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #c77dff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        svg {
+            border: 3px solid #c77dff;
+            border-radius: 8px;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0a 100%);
+            box-shadow: 0 0 30px rgba(199, 125, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>⏰ Observatory of Converging Fates ⏰</h1>
+
+    <svg width="900" height="950" viewBox="0 0 900 950" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <radialGradient id="starfield" cx="50%" cy="50%">
+                <stop offset="0%" style="stop-color:#1a1a3e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+            </radialGradient>
+
+            <pattern id="gearPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="20" cy="20" r="15" fill="none" stroke="#8b7355" stroke-width="2"/>
+                <circle cx="20" cy="20" r="8" fill="none" stroke="#8b7355" stroke-width="2"/>
+                <line x1="20" y1="5" x2="20" y2="15" stroke="#8b7355" stroke-width="2"/>
+                <line x1="35" y1="20" x2="25" y2="20" stroke="#8b7355" stroke-width="2"/>
+                <line x1="20" y1="35" x2="20" y2="25" stroke="#8b7355" stroke-width="2"/>
+                <line x1="5" y1="20" x2="15" y2="20" stroke="#8b7355" stroke-width="2"/>
+            </pattern>
+
+            <radialGradient id="temporalDistortion">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.6" />
+                <stop offset="50%" style="stop-color:#c77dff;stop-opacity:0.4" />
+                <stop offset="100%" style="stop-color:#7209b7;stop-opacity:0" />
+            </radialGradient>
+
+            <linearGradient id="orreryMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#8b7355;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+            </linearGradient>
+
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="strongGlow">
+                <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="shadow">
+                <feDropShadow dx="3" dy="5" stdDeviation="4" flood-opacity="0.8"/>
+            </filter>
+        </defs>
+
+        <circle cx="450" cy="500" r="400" fill="url(#starfield)" stroke="#2a2a2a" stroke-width="4"/>
+        <circle cx="450" cy="500" r="380" fill="url(#starfield)" stroke="#c77dff" stroke-width="2" opacity="0.8"/>
+        
+        <g id="stars-below" opacity="0.6">
+            <circle cx="300" cy="400" r="2" fill="white">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="380" cy="450" r="1.5" fill="white">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <circle cx="520" cy="420" r="2" fill="white">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="3.5s" repeatCount="indefinite" begin="1s"/>
+            </circle>
+            <circle cx="600" cy="480" r="1.5" fill="white">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite" begin="0.3s"/>
+            </circle>
+            <circle cx="450" cy="550" r="2.5" fill="white">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="3.2s" repeatCount="indefinite" begin="1.2s"/>
+            </circle>
+            <circle cx="340" cy="600" r="1.5" fill="white">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2.7s" repeatCount="indefinite" begin="0.8s"/>
+            </circle>
+            <circle cx="560" cy="580" r="2" fill="white">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="3.3s" repeatCount="indefinite" begin="1.5s"/>
+            </circle>
+        </g>
+
+        <g id="orrery" transform="translate(450, 500)">
+            <ellipse cx="0" cy="80" rx="100" ry="35" fill="#000" opacity="0.4"/>
+            <circle cx="0" cy="0" r="90" fill="url(#orreryMetal)" stroke="#654321" stroke-width="3" filter="url(#shadow)"/>
+            
+            <circle cx="0" cy="0" r="25" fill="#ffd700" stroke="#d4af37" stroke-width="2" filter="url(#strongGlow)">
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            
+            <circle cx="0" cy="0" r="40" fill="none" stroke="#8b7355" stroke-width="2" opacity="0.6"/>
+            <circle cx="0" cy="0" r="60" fill="none" stroke="#8b7355" stroke-width="2" opacity="0.6"/>
+            <circle cx="0" cy="0" r="80" fill="none" stroke="#8b7355" stroke-width="2" opacity="0.6"/>
+            
+            <circle cx="40" cy="0" r="6" fill="#e63946" stroke="#c01c28" stroke-width="1">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="-60" cy="0" r="8" fill="#457b9d" stroke="#1c71d8" stroke-width="1">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 0 0" to="360 0 0" dur="12s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="80" r="7" fill="#2a9d8f" stroke="#26a269" stroke-width="1">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 0 0" to="360 0 0" dur="16s" repeatCount="indefinite"/>
+            </circle>
+            
+            <g transform="translate(0, -75)">
+                <rect x="-15" y="-15" width="30" height="30" rx="5" fill="#333" stroke="#e63946" stroke-width="2"/>
+                <text x="0" y="5" font-size="16" fill="#e63946" text-anchor="middle" font-weight="bold">N</text>
+                <circle cx="0" cy="0" r="20" fill="none" stroke="#e63946" stroke-width="1" opacity="0.3">
+                    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+            
+            <g transform="translate(75, 0)">
+                <rect x="-15" y="-15" width="30" height="30" rx="5" fill="#333" stroke="#457b9d" stroke-width="2"/>
+                <text x="0" y="5" font-size="16" fill="#457b9d" text-anchor="middle" font-weight="bold">E</text>
+                <circle cx="0" cy="0" r="20" fill="none" stroke="#457b9d" stroke-width="1" opacity="0.3">
+                    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.2s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+            
+            <g transform="translate(0, 75)">
+                <rect x="-15" y="-15" width="30" height="30" rx="5" fill="#333" stroke="#2a9d8f" stroke-width="2"/>
+                <text x="0" y="5" font-size="16" fill="#2a9d8f" text-anchor="middle" font-weight="bold">S</text>
+                <circle cx="0" cy="0" r="20" fill="none" stroke="#2a9d8f" stroke-width="1" opacity="0.3">
+                    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+            
+            <g transform="translate(-75, 0)">
+                <rect x="-15" y="-15" width="30" height="30" rx="5" fill="#333" stroke="#f4a261" stroke-width="2"/>
+                <text x="0" y="5" font-size="16" fill="#f4a261" text-anchor="middle" font-weight="bold">W</text>
+                <circle cx="0" cy="0" r="20" fill="none" stroke="#f4a261" stroke-width="1" opacity="0.3">
+                    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.6s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+            
+            <text x="0" y="120" font-size="14" fill="#d4af37" text-anchor="middle" font-weight="bold">CELESTIAL ORRERY</text>
+        </g>
+
+        <g id="guardian" transform="translate(450, 300)">
+            <circle cx="0" cy="0" r="80" fill="url(#temporalDistortion)" opacity="0.4">
+                <animate attributeName="r" values="75;90;75" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            
+            <ellipse cx="0" cy="80" rx="50" ry="20" fill="#000" opacity="0.5"/>
+            
+            <rect x="-35" y="-10" width="70" height="70" rx="10" fill="url(#gearPattern)" stroke="#8b7355" stroke-width="3" filter="url(#shadow)" opacity="0.9"/>
+            
+            <circle cx="0" cy="25" r="30" fill="none" stroke="#d4af37" stroke-width="3">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 0 25" to="360 0 25" dur="6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="25" r="15" fill="none" stroke="#d4af37" stroke-width="2">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 0 25" to="-360 0 25" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            
+            <circle cx="0" cy="-30" r="25" fill="#333" stroke="#8b7355" stroke-width="3" filter="url(#shadow)"/>
+            <circle cx="0" cy="-30" r="22" fill="#1a1a1a" stroke="#d4af37" stroke-width="2"/>
+            
+            <line x1="0" y1="-30" x2="0" y2="-45" stroke="#c77dff" stroke-width="2" filter="url(#glow)">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 0 -30" to="360 0 -30" dur="8s" repeatCount="indefinite"/>
+            </line>
+            <line x1="0" y1="-30" x2="15" y2="-30" stroke="#00d4ff" stroke-width="2" filter="url(#glow)">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 0 -30" to="360 0 -30" dur="2s" repeatCount="indefinite"/>
+            </line>
+            
+            <circle cx="0" cy="25" r="8" fill="#c77dff" stroke="#7209b7" stroke-width="2" filter="url(#strongGlow)">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+            
+            <path d="M -35 10 Q -60 20 -50 50" stroke="#00d4ff" stroke-width="4" fill="none" opacity="0.7" filter="url(#glow)">
+                <animate attributeName="d" 
+                         values="M -35 10 Q -60 20 -50 50;M -35 10 Q -65 25 -55 55;M -35 10 Q -60 20 -50 50" 
+                         dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M 35 10 Q 60 20 50 50" stroke="#00d4ff" stroke-width="4" fill="none" opacity="0.7" filter="url(#glow)">
+                <animate attributeName="d" 
+                         values="M 35 10 Q 60 20 50 50;M 35 10 Q 65 25 55 55;M 35 10 Q 60 20 50 50" 
+                         dur="2s" repeatCount="indefinite" begin="1s"/>
+            </path>
+            
+            <text x="0" y="100" font-size="14" fill="#c77dff" text-anchor="middle" font-weight="bold">GUARDIAN OF HOURS</text>
+        </g>
+
+        <path d="M 400 900 L 500 900 L 500 920 L 400 920 Z" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <text x="450" y="913" font-size="12" fill="#c77dff" text-anchor="middle" font-weight="bold">ENTRANCE</text>
+
+        <path d="M 400 80 L 500 80 L 500 100 L 400 100 Z" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <rect x="410" y="85" width="80" height="10" fill="#7209b7" opacity="0.8"/>
+        <text x="450" y="93" font-size="11" fill="#c77dff" text-anchor="middle" font-weight="bold">EXIT (SEALED)</text>
+
+        <g opacity="0.3">
+            <circle cx="200" cy="300" r="30" fill="url(#temporalDistortion)">
+                <animate attributeName="r" values="25;35;25" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="700" cy="350" r="35" fill="url(#temporalDistortion)">
+                <animate attributeName="r" values="30;40;30" dur="4.5s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <circle cx="250" cy="650" r="28" fill="url(#temporalDistortion)">
+                <animate attributeName="r" values="23;33;23" dur="3.8s" repeatCount="indefinite" begin="1s"/>
+            </circle>
+        </g>
+
+        <g>
+            <line x1="120" y1="915" x2="220" y2="915" stroke="#c77dff" stroke-width="2"/>
+            <line x1="120" y1="910" x2="120" y2="920" stroke="#c77dff" stroke-width="2"/>
+            <line x1="220" y1="910" x2="220" y2="920" stroke="#c77dff" stroke-width="2"/>
+            <text x="170" y="907" font-size="12" fill="#c77dff" text-anchor="middle" font-weight="bold">10 feet</text>
+        </g>
+    </svg>
+
+</body>
+</html>

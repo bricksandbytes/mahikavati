@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 2: Chamber of Cardinal Truths</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #c77dff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+        svg {
+            border: 3px solid #c77dff;
+            border-radius: 8px;
+            background: #2a2a2a;
+            box-shadow: 0 0 20px rgba(199, 125, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>🧭 Chamber of Cardinal Truths 🧭</h1>
+
+    <svg width="800" height="850" viewBox="0 0 800 850" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="stonePattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect width="20" height="20" fill="#4a4a4a"/>
+                <rect x="0" y="0" width="10" height="10" fill="#555555" opacity="0.5"/>
+                <rect x="10" y="10" width="10" height="10" fill="#555555" opacity="0.5"/>
+            </pattern>
+
+            <radialGradient id="courageGlow">
+                <stop offset="0%" style="stop-color:#e63946;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#e63946;stop-opacity:0" />
+            </radialGradient>
+            <radialGradient id="wisdomGlow">
+                <stop offset="0%" style="stop-color:#457b9d;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#457b9d;stop-opacity:0" />
+            </radialGradient>
+            <radialGradient id="compassionGlow">
+                <stop offset="0%" style="stop-color:#2a9d8f;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#2a9d8f;stop-opacity:0" />
+            </radialGradient>
+            <radialGradient id="justiceGlow">
+                <stop offset="0%" style="stop-color:#f4a261;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#f4a261;stop-opacity:0" />
+            </radialGradient>
+
+            <linearGradient id="sundialGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+            </linearGradient>
+
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="strongGlow">
+                <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="shadow">
+                <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.7"/>
+            </filter>
+        </defs>
+
+        <rect x="50" y="50" width="700" height="700" fill="url(#stonePattern)" stroke="#2a2a2a" stroke-width="4"/>
+        <rect x="70" y="70" width="660" height="660" fill="#3a3a3a" stroke="#555" stroke-width="2"/>
+
+        <g opacity="0.2">
+            <line x1="400" y1="100" x2="400" y2="700" stroke="#c77dff" stroke-width="2"/>
+            <line x1="100" y1="400" x2="700" y2="400" stroke="#c77dff" stroke-width="2"/>
+            <line x1="150" y1="150" x2="650" y2="650" stroke="#c77dff" stroke-width="1"/>
+            <line x1="650" y1="150" x2="150" y2="650" stroke="#c77dff" stroke-width="1"/>
+        </g>
+
+        <!-- NORTH DOOR (Courage - Red) -->
+        <g id="north-door">
+            <rect x="350" y="50" width="100" height="20" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="360" y="55" width="80" height="10" fill="#e63946" opacity="0.8">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <circle cx="400" cy="60" r="35" fill="url(#courageGlow)" opacity="0.3">
+                <animate attributeName="r" values="30;40;30" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <text x="400" y="40" font-size="14" fill="#e63946" text-anchor="middle" font-weight="bold">COURAGE</text>
+            <circle cx="400" cy="60" r="8" fill="#666" stroke="#e63946" stroke-width="2"/>
+            <rect x="398" y="60" width="4" height="8" fill="#e63946"/>
+        </g>
+
+        <!-- EAST DOOR (Wisdom - Blue) -->
+        <g id="east-door">
+            <rect x="730" y="350" width="20" height="100" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="735" y="360" width="10" height="80" fill="#457b9d" opacity="0.8">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+            </rect>
+            <circle cx="740" cy="400" r="35" fill="url(#wisdomGlow)" opacity="0.3">
+                <animate attributeName="r" values="30;40;30" dur="3.2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="740" y="340" font-size="14" fill="#457b9d" text-anchor="middle" font-weight="bold" transform="rotate(90, 740, 340)">WISDOM</text>
+            <circle cx="740" cy="400" r="8" fill="#666" stroke="#457b9d" stroke-width="2"/>
+            <rect x="738" y="400" width="4" height="8" fill="#457b9d"/>
+        </g>
+
+        <!-- SOUTH DOOR (Compassion - Teal) -->
+        <g id="south-door">
+            <rect x="350" y="730" width="100" height="20" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="360" y="735" width="80" height="10" fill="#2a9d8f" opacity="0.8">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"/>
+            </rect>
+            <circle cx="400" cy="740" r="35" fill="url(#compassionGlow)" opacity="0.3">
+                <animate attributeName="r" values="30;40;30" dur="3.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="400" y="765" font-size="14" fill="#2a9d8f" text-anchor="middle" font-weight="bold">COMPASSION</text>
+            <circle cx="400" cy="740" r="8" fill="#666" stroke="#2a9d8f" stroke-width="2"/>
+            <rect x="398" y="740" width="4" height="8" fill="#2a9d8f"/>
+        </g>
+
+        <!-- WEST DOOR (Justice - Orange) -->
+        <g id="west-door">
+            <rect x="50" y="350" width="20" height="100" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="55" y="360" width="10" height="80" fill="#f4a261" opacity="0.8">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.6s" repeatCount="indefinite"/>
+            </rect>
+            <circle cx="60" cy="400" r="35" fill="url(#justiceGlow)" opacity="0.3">
+                <animate attributeName="r" values="30;40;30" dur="3.6s" repeatCount="indefinite"/>
+            </circle>
+            <text x="60" y="470" font-size="14" fill="#f4a261" text-anchor="middle" font-weight="bold" transform="rotate(-90, 60, 470)">JUSTICE</text>
+            <circle cx="60" cy="400" r="8" fill="#666" stroke="#f4a261" stroke-width="2"/>
+            <rect x="58" y="400" width="4" height="8" fill="#f4a261"/>
+        </g>
+
+        <!-- Central Sundial -->
+        <g id="sundial">
+            <ellipse cx="400" cy="420" rx="80" ry="30" fill="#000" opacity="0.4"/>
+            
+            <circle cx="400" cy="400" r="70" fill="url(#sundialGradient)" stroke="#8b7355" stroke-width="4" filter="url(#shadow)"/>
+            
+            <g stroke="#654321" stroke-width="2">
+                <line x1="400" y1="335" x2="400" y2="345"/>
+                <line x1="465" y1="400" x2="455" y2="400"/>
+                <line x1="400" y1="465" x2="400" y2="455"/>
+                <line x1="335" y1="400" x2="345" y2="400"/>
+            </g>
+            
+            <polygon points="400,400 395,380 405,380" fill="#654321" stroke="#3a2a1a" stroke-width="2" filter="url(#shadow)">
+                <animateTransform attributeName="transform" type="rotate" 
+                                  from="0 400 400" to="360 400 400" dur="60s" repeatCount="indefinite"/>
+            </polygon>
+            
+            <circle cx="400" cy="400" r="15" fill="#c77dff" stroke="#7209b7" stroke-width="2" filter="url(#strongGlow)">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            
+            <text x="400" y="345" font-size="16" fill="#654321" text-anchor="middle">⚬</text>
+            <text x="455" y="408" font-size="16" fill="#654321" text-anchor="middle">⚬</text>
+            <text x="400" y="470" font-size="16" fill="#654321" text-anchor="middle">⚬</text>
+            <text x="345" y="408" font-size="16" fill="#654321" text-anchor="middle">⚬</text>
+            
+            <text x="400" y="495" font-size="13" fill="#d4af37" text-anchor="middle" font-weight="bold">SPEAKING SUNDIAL</text>
+        </g>
+
+        <rect x="350" y="30" width="100" height="20" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <text x="400" y="43" font-size="11" fill="#c77dff" text-anchor="middle" font-weight="bold">ENTRANCE</text>
+
+        <g>
+            <line x1="100" y1="790" x2="200" y2="790" stroke="#c77dff" stroke-width="2"/>
+            <line x1="100" y1="785" x2="100" y2="795" stroke="#c77dff" stroke-width="2"/>
+            <line x1="200" y1="785" x2="200" y2="795" stroke="#c77dff" stroke-width="2"/>
+            <text x="150" y="782" font-size="12" fill="#c77dff" text-anchor="middle" font-weight="bold">10 feet</text>
+        </g>
+
+        <text x="400" y="90" font-size="11" fill="#888" text-anchor="middle">NORTH</text>
+        <text x="710" y="405" font-size="11" fill="#888" text-anchor="middle">EAST</text>
+        <text x="400" y="720" font-size="11" fill="#888" text-anchor="middle">SOUTH</text>
+        <text x="90" y="405" font-size="11" fill="#888" text-anchor="middle">WEST</text>
+    </svg>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 3: Vault of False Norths</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #c77dff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+        svg {
+            border: 3px solid #c77dff;
+            border-radius: 8px;
+            background: #2a2a2a;
+            box-shadow: 0 0 20px rgba(199, 125, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>🧭 Vault of False Norths 🧭</h1>
+
+    <svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="stonePattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect width="20" height="20" fill="#4a4a4a"/>
+                <rect x="0" y="0" width="10" height="10" fill="#555555" opacity="0.5"/>
+                <rect x="10" y="10" width="10" height="10" fill="#555555" opacity="0.5"/>
+            </pattern>
+
+            <linearGradient id="falseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#d4af37;stop-opacity:1" />
+            </linearGradient>
+
+            <linearGradient id="pedestalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#666;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#444;stop-opacity:1" />
+            </linearGradient>
+
+            <radialGradient id="dangerGlow">
+                <stop offset="0%" style="stop-color:#e01b24;stop-opacity:0.6" />
+                <stop offset="100%" style="stop-color:#e01b24;stop-opacity:0" />
+            </radialGradient>
+
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="shadow">
+                <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.7"/>
+            </filter>
+        </defs>
+
+        <circle cx="400" cy="400" r="350" fill="url(#stonePattern)" stroke="#2a2a2a" stroke-width="4"/>
+        <circle cx="400" cy="400" r="330" fill="#3a3a3a" stroke="#555" stroke-width="2"/>
+
+        <g opacity="0.2">
+            <circle cx="400" cy="400" r="280" fill="none" stroke="#c77dff" stroke-width="2"/>
+            <circle cx="400" cy="400" r="240" fill="none" stroke="#c77dff" stroke-width="2"/>
+            <circle cx="400" cy="400" r="200" fill="none" stroke="#c77dff" stroke-width="2"/>
+            <line x1="400" y1="120" x2="400" y2="680" stroke="#c77dff" stroke-width="2"/>
+            <line x1="120" y1="400" x2="680" y2="400" stroke="#c77dff" stroke-width="2"/>
+        </g>
+
+        <!-- 12 Pedestals in a circle with compasses -->
+        <g transform="translate(400, 160)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">1</text>
+        </g>
+
+        <g transform="translate(520, 200)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.2s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">2</text>
+        </g>
+
+        <g transform="translate(600, 280)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.4s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">3</text>
+        </g>
+
+        <g transform="translate(640, 400)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.6s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">4</text>
+        </g>
+
+        <g transform="translate(600, 520)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.8s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">5</text>
+        </g>
+
+        <g transform="translate(520, 600)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">6</text>
+        </g>
+
+        <g transform="translate(400, 640)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4.2s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">7</text>
+        </g>
+
+        <g transform="translate(280, 600)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4.4s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">8</text>
+        </g>
+
+        <g transform="translate(200, 520)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4.6s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">9</text>
+        </g>
+
+        <g transform="translate(160, 400)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4.8s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">10</text>
+        </g>
+
+        <g transform="translate(200, 280)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="5s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">11</text>
+        </g>
+
+        <g transform="translate(280, 200)">
+            <ellipse cx="0" cy="25" rx="25" ry="10" fill="#000" opacity="0.3"/>
+            <rect x="-20" y="0" width="40" height="20" fill="url(#pedestalGradient)" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+            <circle cx="0" cy="-10" r="15" fill="url(#falseGradient)" stroke="#8b7355" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="-10" r="18" fill="url(#dangerGlow)" opacity="0.3">
+                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="5.2s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="0" y1="-10" x2="0" y2="-18" stroke="#654321" stroke-width="2"/>
+            <text x="0" y="50" font-size="8" fill="#888" text-anchor="middle">12</text>
+        </g>
+
+        <path d="M 350 50 L 450 50 L 450 30 L 350 30 Z" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <text x="400" y="43" font-size="11" fill="#c77dff" text-anchor="middle" font-weight="bold">ENTRANCE</text>
+
+        <path d="M 350 770 L 450 770 L 450 750 L 350 750 Z" fill="#654321" stroke="#2a2a2a" stroke-width="2"/>
+        <rect x="360" y="755" width="80" height="10" fill="#7209b7" opacity="0.8"/>
+        <text x="400" y="763" font-size="11" fill="#c77dff" text-anchor="middle" font-weight="bold">EXIT (SEALED)</text>
+
+        <text x="400" y="110" font-size="12" fill="#e01b24" text-anchor="middle" font-style="italic" opacity="0.7">
+            "Beware the False Norths - Only One Path is True"
+        </text>
+
+        <g>
+            <line x1="100" y1="755" x2="200" y2="755" stroke="#c77dff" stroke-width="2"/>
+            <line x1="100" y1="750" x2="100" y2="760" stroke="#c77dff" stroke-width="2"/>
+            <line x1="200" y1="750" x2="200" y2="760" stroke="#c77dff" stroke-width="2"/>
+            <text x="150" y="747" font-size="12" fill="#c77dff" text-anchor="middle" font-weight="bold">10 feet</text>
+        </g>
+    </svg>
+
+</body>
+</html>
