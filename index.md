@@ -16,6 +16,7 @@ Welcome to the island kingdom campaign setting!
 - [Madh Pargana - Andheri Subah](pargana_madh.md)
   - [Map](new_madh.html)
 - [Travieze Lock](travieze-lock/index.html)
+- [Pelorat Compass](pelorat/pelorat_index.html)
 <!--  - [Map](madh.bmp) -->
 
 <!-- 
