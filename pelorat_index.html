@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pelorat Compass - Dungeon Maps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #2a1a4e 100%);
+            font-family: 'Courier New', monospace;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #c77dff;
+            text-shadow: 0 0 20px rgba(199, 125, 255, 0.6);
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #d4af37;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+        
+        .description {
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #c77dff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        
+        .room-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 3px solid #c77dff;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            animation: fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .room-card:nth-child(1) { animation-delay: 0.1s; }
+        .room-card:nth-child(2) { animation-delay: 0.2s; }
+        .room-card:nth-child(3) { animation-delay: 0.3s; }
+        .room-card:nth-child(4) { animation-delay: 0.4s; }
+        .room-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        .room-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(199, 125, 255, 0.1) 50%, transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(199, 125, 255, 0.4);
+            border-color: #d4af37;
+        }
+        
+        .room-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .room-number {
+            font-size: 3em;
+            color: #c77dff;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(199, 125, 255, 0.6);
+        }
+        
+        .room-title {
+            font-size: 1.3em;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .room-icon {
+            font-size: 2.5em;
+            margin: 15px 0;
+            filter: drop-shadow(0 0 10px rgba(199, 125, 255, 0.4));
+        }
+        
+        .room-description {
+            font-size: 0.9em;
+            color: #999;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .view-map-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #7209b7 0%, #c77dff 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
+        
+        .view-map-btn:hover {
+            background: linear-gradient(135deg, #c77dff 0%, #7209b7 100%);
+            border-color: #d4af37;
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(199, 125, 255, 0.5);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            animation: fadeIn 2s ease-out;
+        }
+        
+        .compass-icon {
+            animation: spin 20s linear infinite;
+            display: inline-block;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(199, 125, 255, 0.4);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(199, 125, 255, 0.8);
+            }
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+            
+            .room-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Starfield background effect */
+        .star {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+            z-index: -1;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Starfield background -->
+    <script>
+        // Create random stars
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.opacity = Math.random() * 0.7 + 0.3;
+            document.body.appendChild(star);
+        }
+    </script>
+
+    <header>
+        <h1><span class="compass-icon">🧭</span> The Pelorat Compass <span class="compass-icon">🧭</span></h1>
+        <p class="subtitle">A Five Room Dungeon</p>
+    </header>
+
+    <div class="description">
+        <p>Five trials await those who seek the legendary Pelorat Compass. Each chamber tests a different aspect of your fellowship: purpose, honesty, wisdom, unity, and destiny. The compass points not to north, but to your ultimate destination.</p>
+        <p style="margin-top: 15px; color: #c77dff;">⚠️ <em>These maps reveal only what your eyes can see. The true challenges await within.</em> ⚠️</p>
+    </div>
+
+    <div class="room-grid">
+        <!-- Room 1 -->
+        <div class="room-card">
+            <div class="room-number">1</div>
+            <div class="room-icon">🧲</div>
+            <h2 class="room-title">Hall of Magnetic Resonance</h2>
+            <p class="room-description">
+                A long hallway lined with massive lodestones that pulse with magnetic energy. An iron construct stands sentinel at the far end, guardian of the threshold.
+            </p>
+            <a href="pelorat_room1_player_version.html" class="view-map-btn">View Map</a>
+        </div>
+
+        <!-- Room 2 -->
+        <div class="room-card">
+            <div class="room-number">2</div>
+            <div class="room-icon">⚖️</div>
+            <h2 class="room-title">Chamber of Cardinal Truths</h2>
+            <p class="room-description">
+                A square chamber with four doors marked by virtues: Courage, Wisdom, Compassion, and Justice. A speaking sundial poses questions at its heart.
+            </p>
+            <a href="pelorat_room2_player_version.html" class="view-map-btn">View Map</a>
+        </div>
+
+        <!-- Room 3 -->
+        <div class="room-card">
+            <div class="room-number">3</div>
+            <div class="room-icon">🔍</div>
+            <h2 class="room-title">Vault of False Norths</h2>
+            <p class="room-description">
+                A circular chamber containing twelve identical golden compasses arranged in a perfect circle. An ancient warning whispers: "Beware the False Norths."
+            </p>
+            <a href="pelorat_room3_player_version.html" class="view-map-btn">View Map</a>
+        </div>
+
+        <!-- Room 4 -->
+        <div class="room-card">
+            <div class="room-number">4</div>
+            <div class="room-icon">⏰</div>
+            <h2 class="room-title">Observatory of Converging Fates</h2>
+            <p class="room-description">
+                A domed chamber with a transparent floor showing infinite stars below. A celestial orrery dominates the center, while a temporal guardian watches from above.
+            </p>
+            <a href="pelorat_room4_player_version.html" class="view-map-btn">View Map</a>
+        </div>
+
+        <!-- Room 5 -->
+        <div class="room-card">
+            <div class="room-number">5</div>
+            <div class="room-icon">🏔️</div>
+            <h2 class="room-title">Horizon of Convergence</h2>
+            <p class="room-description">
+                The dome retracts to reveal a breathtaking vista: seven peaks crowned by aurora and stars. The Pelorat Compass reveals its true nature and points toward destiny.
+            </p>
+            <a href="pelorat_room5_player_version.html" class="view-map-btn">View Map</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>✨ The Pelorat Compass awaits those brave enough to seek it ✨</p>
+        <p style="margin-top: 10px; font-size: 0.8em;">Named after Janov Pelorat, historian and traveler of Asimov's Foundation</p>
+    </footer>
+</body>
+</html>
